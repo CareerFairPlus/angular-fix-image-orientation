@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/CareerFairPlus/angular-fix-image-orientation/issues"
   },
-  "homepage": "https://github.com/CareerFairPlus/angular-fix-image-orientation#readme"
+  "homepage": "https://github.com/CareerFairPlus/angular-fix-image-orientation#readme",
+  "dependencies": {
+    "exif-js": "2.3.0"
+  }
 }
