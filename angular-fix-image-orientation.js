@@ -30,7 +30,7 @@
             
             if (0 === imageUrl.indexOf('data:image')) {
                 var base64 = imageUrl.split(',')[1];
-                var exifData = EXIF.readFromBinaryFile(base64ToArrayBuffer(base64));
+                var exifData = window.EXIF.readFromBinaryFile(base64ToArrayBuffer(base64));
                 reOrient(parseInt(exifData.Orientation || 1, 10), element);
             }
             else {
@@ -39,7 +39,7 @@
                 xhr.responseType = "arraybuffer";
                 xhr.onload = function(e) {
                     var arrayBuffer = new Uint8Array(this.response);
-                    var exifData = EXIF.readFromBinaryFile(arrayBuffer.buffer);
+                    var exifData = window.EXIF.readFromBinaryFile(arrayBuffer.buffer);
                     reOrient(parseInt(exifData.Orientation || 1, 10), element);
                 };
                 xhr.send();
